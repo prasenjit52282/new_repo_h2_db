@@ -18,7 +18,7 @@ public class BaseController {
     public ModelAndView home(){
         ModelAndView page=new ModelAndView();
         page.setViewName("index.html");
-        return page;
+        return page; //returning index.html
     }
 
     @RequestMapping(value = "/create/",params = {"id","name","age","mobile_no","trade"},method = RequestMethod.POST)
