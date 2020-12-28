@@ -13,10 +13,10 @@ public class BaseController {
     @Autowired
     tupleDatabaseService database;
 
-    //@RequestMapping("/")
-    //public String home(){
-    //    return "Welcome to DATABASE H.2";
-    //}
+    @RequestMapping("/")
+    public String home(){
+        return "Welcome to DATABASE H.2";
+    }
 
     @RequestMapping(value = "/create/",params = {"id","name","age","mobile_no","trade"},method = RequestMethod.POST)
     public String create(@RequestParam(value="id") int id,
