@@ -4,6 +4,7 @@ import com.nitdgp.database.DataBase.Tuple;
 import com.nitdgp.database.DataBase.tupleDatabaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -14,8 +15,10 @@ public class BaseController {
     tupleDatabaseService database;
 
     @RequestMapping("/")
-    public String home(){
-        return "Welcome to DATABASE H.2";
+    public ModelAndView home(){
+        ModelAndView page=new ModelAndView();
+        page.setViewName("index.html");
+        return page;
     }
 
     @RequestMapping(value = "/create/",params = {"id","name","age","mobile_no","trade"},method = RequestMethod.POST)
